@@ -6,7 +6,7 @@ author:
 description: Group of people in Lisbon interested in Programming Languages
 
 baseurl: ""
-url: "https://pl-lx.github.io"
+url: "https://rcosta358.github.io"
 
 permalink: /:year-:month-:day/:title
 paginate: 5
