@@ -7,4 +7,4 @@ title: Home
 
 ## Mailing List
 
-Most activities are disseminated via the [mailing list](https://groups.google.com/g/pl_lx/). Join to stay updated!
+Most activities are disseminated via the [mailing list](https://groups.google.com/g/pl_lx/). Subscribe to stay updated!
