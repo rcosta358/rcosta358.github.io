@@ -1,10 +1,8 @@
 ---
-layout: default
+layout: page
 title: Contacts
 permalink: /contacts/
 ---
-
-# Contacts
 
 In case you want to present at the next meetup, feel free to contact any of the following:
 
