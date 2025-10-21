@@ -11,8 +11,7 @@ baseurl: ""
 url: "https://rcosta358.github.io"
 
 permalink: /:year-:month-:day/:title
-paginate: 10
-paginate_path: "/events/page:num/"
+paginate: 5
 
 # Build settings
 remote_theme: chesterhow/tale
