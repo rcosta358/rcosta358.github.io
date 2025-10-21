@@ -1,0 +1,29 @@
+title: PL @ LX
+author:
+  name: PL @ LX
+  email: pl_lx@groups.google.com
+
+description: >
+  PL @ LX is an informal group of people in Lisbon (and surrounding areas) 
+  who are interested in Programming Language Design and Implementation.
+
+baseurl: ""
+url: "https://rcosta358.github.io"
+
+permalink: /:year-:month-:day/:title
+paginate: 5
+
+# Build settings
+remote_theme: chesterhow/tale
+
+plugins:
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
