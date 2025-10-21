@@ -9,7 +9,7 @@ category: events
 
 **Location:** Instituto Superior Técnico
 
-**Date:** June 3, 2024
+**Date:** June 03, 2024
 
 ## Program
 
