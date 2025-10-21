@@ -3,9 +3,7 @@ author:
   name: PL @ LX
   email: pl_lx@groups.google.com
 
-description: >
-  PL @ LX is an informal group of people in Lisbon (and surrounding areas) 
-  who are interested in Programming Language Design and Implementation.
+description: Group of people in Lisbon interested in Programming Languages
 
 baseurl: ""
 url: "https://pl-lx.github.io"
