@@ -9,7 +9,7 @@ category: events
 
 **Location:** Faculdade de Ciências da Universidade de Lisboa
 
-**Date:** 10 de Janeiro de 2024
+**Date:** January 10, 2024
 
 ## Program
 

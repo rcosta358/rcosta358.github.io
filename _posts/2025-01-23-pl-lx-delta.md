@@ -9,7 +9,7 @@ category: events
 
 **Location:** Faculdade de Ciências da Universidade de Lisboa
 
-**Date:** 23 de Janeiro de 2025
+**Date:** January 23, 2025
 
 ## Program
 
