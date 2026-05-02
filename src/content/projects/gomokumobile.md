@@ -10,4 +10,4 @@ role: Co-author
 context: Academic project
 ---
 
-Mobile application for playing Gomoku through a remote HTTP API, built with Kotlin and Jetpack Compose.
+Mobile application for playing Gomoku through the Web API, built with Kotlin and Jetpack Compose.

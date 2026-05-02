@@ -10,4 +10,4 @@ role: Author
 context: Personal project
 ---
 
-Python and Pygame implementation of the classic cellular automaton, with grid-based generation updates using Conway's birth and survival rules.
+Pygame implementation of the classic Conway's Game of Life, that allows users to place cells on a grid and watch the simulation evolve through generations.

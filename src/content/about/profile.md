@@ -39,7 +39,7 @@ skills:
   - group: Programming Languages
     items: [Python, Java, JavaScript, TypeScript, Rust, Kotlin, Go, C, C#]
   - group: Compilers and Static Analysis
-    items: [Parsing, ASTs, Type systems, Liquid types, Refinement types, Typestates, SMT solvers, Code generation, LLVM]
+    items: [Parsing, ASTs, Type systems, Liquid types, Typestates, SMT solvers, Code generation, LLVM]
   - group: Cloud and DevOps
     items: [Google Cloud Platform, Cloudflare Workers, Docker, Kubernetes, Git, Linux]
   - group: Web Development

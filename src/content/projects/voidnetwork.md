@@ -10,4 +10,4 @@ role: Co-author
 context: Academic project
 ---
 
-Stranger Things-inspired mobile app for cross-dimensional communication through portals and binary-coded signals, with Firebase-backed real-time messages, portal synchronization, authentication, device sensors, Mapbox maps, ML Kit image detection, and Supabase file storage.
+Mobile app for the Stranger Things universe with cross-dimensional communication through portals and binary-coded signals.

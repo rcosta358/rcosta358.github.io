@@ -10,4 +10,4 @@ role: Author
 context: Personal project
 ---
 
-Simple web application for creating and resolving shortened URLs, built as a REST-oriented service with the Axum framework.
+Simple REST API for shortening URLs built with the Axum framework.

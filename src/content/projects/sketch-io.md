@@ -10,4 +10,4 @@ role: Co-author
 context: Friend project
 ---
 
-Real-time web game with a separate client and server architecture, Socket.IO-based communication, a multiplayer game loop, and p5.js drawing interactions.
+Drawing and guessing multiplayer game inspired by Skribbl.io, built with a Socket.IO and p5.js.

@@ -10,4 +10,4 @@ role: Co-author
 context: Academic project
 ---
 
-Two-player checkers application implementing the classic turn-based board game while exploring Compose Desktop UI development.
+Turn-based checkers game implemented as a desktop application.

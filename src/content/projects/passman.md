@@ -10,4 +10,4 @@ role: Author
 context: Personal project
 ---
 
-Local password manager with encrypted vaults, AES-256-GCM-SIV encryption, Argon2id key derivation, credential leak prevention, session and clipboard TTL behavior, password generation, and password strength analysis.
+Local password manager with AES-256-GCM-SIV encryption, Argon2id key derivation, credential leak prevention, session and clipboard TTL behavior, password generation, and password strength analysis.

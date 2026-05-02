@@ -4,10 +4,10 @@ projectName: vscode-liquidjava
 order: 3
 year: 2025
 url: https://github.com/liquid-java/vscode-liquidjava
-technologies: [TypeScript, Java, LSP]
+technologies: [TypeScript, Java, LSP, VS Code]
 keywords: [static analysis, type systems, software verification, developer tools, vs code extension, lsp]
 role: Contributor
-context: Academic project
+context: MSc project
 ---
 
-VS Code extension that automatically runs LiquidJava verification and reports diagnostics through the Language Server Protocol. Work focused on developer experience, including an interactive webview for exploring diagnostics, inspecting verification context, and visualizing typestate protocols with Mermaid.
+VS Code extension that automatically runs LiquidJava verification and reports diagnostics through LSP. Work focused on improving developer experience by enhancing the way developers read, write, and debug LiquidJava refinements.

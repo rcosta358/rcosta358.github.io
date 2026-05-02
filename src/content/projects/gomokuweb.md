@@ -10,4 +10,4 @@ role: Co-author
 context: Academic project
 ---
 
-HTTP API server and React frontend for playing Gomoku online, structured with separate backend and frontend concerns and REST-oriented client-server communication.
+Web API and React frontend for playing Gomoku online, with user authentication, game state management, and a responsive UI.
