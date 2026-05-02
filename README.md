@@ -1,6 +1,6 @@
 # rcosta358.github.io
 
-Personal website and portfolio built with Astro, TypeScript, and SCSS.
+Personal website built with Astro, TypeScript, and SCSS.
 
 ## Development
 
@@ -44,8 +44,6 @@ Portfolio content is stored in Markdown under `src/content/` and rendered throug
 - `src/content/projects/`
 - `src/content/education/`
 
-`PORTFOLIO.md` is kept as the source context for the site's content.
-
 ## Deployment
 
-The site is deployed to GitHub Pages with the workflow in `.github/workflows/deploy.yml`.
+The site is deployed on GitHub Pages at `https://rcosta358.github.io` with the workflow in `.github/workflows/deploy.yml`.
