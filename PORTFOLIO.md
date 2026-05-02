@@ -8,6 +8,7 @@
 - **Email:** rcosta.ms358@gmail.com
 - **GitHub:** https://github.com/rcosta358
 - **LinkedIn:** https://www.linkedin.com/in/rcosta358
+- **ORCID:** https://orcid.org/0009-0007-5674-4200
 
 ## Education
 
