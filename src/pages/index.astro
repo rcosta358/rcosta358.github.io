@@ -1,5 +1,8 @@
 ---
-import AboutPage from "./about.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import AboutContent from "@components/AboutContent.astro";
 ---
 
-<AboutPage />
+<BaseLayout title="About | Ricardo Costa">
+  <AboutContent />
+</BaseLayout>
