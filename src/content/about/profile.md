@@ -6,6 +6,7 @@ summary:
   - Software Engineering MSc student focused on building reliable software and developer tools.
   - Strongest interests are static analysis, type systems, compilers, software verification, and tools that improve the way developers code.
   - Also experienced in full-stack web development, cloud computing, and mobile applications.
+  - You can check out my CV [here](https://rcosta358.github.io/RicardoCostaCV.pdf).
 contacts:
   - label: Email
     href: mailto:rcosta.ms358@gmail.com
