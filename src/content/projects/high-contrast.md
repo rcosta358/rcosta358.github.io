@@ -1,6 +1,6 @@
 ---
 title: 2D mobile platformer game
-projectName: High Contrast
+projectName: High-Contrast
 order: 29
 year: 2022
 url: https://github.com/rcosta358/High-Contrast

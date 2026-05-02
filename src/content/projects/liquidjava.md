@@ -1,6 +1,6 @@
 ---
 title: Liquid type checker for Java
-projectName: LiquidJava
+projectName: liquidjava
 order: 2
 year: 2025
 url: https://github.com/liquid-java/liquidjava
