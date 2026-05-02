@@ -15,7 +15,7 @@ contacts:
     href: https://github.com/rcosta358
     kind: github
   - label: LinkedIn
-    href: https://www.linkedin.com/in/rcosta358
+    href: https://linkedin.com/in/rcosta358
     kind: linkedin
   - label: ORCID
     href: https://orcid.org/0009-0007-5674-4200
