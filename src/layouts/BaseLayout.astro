@@ -1,0 +1,37 @@
+---
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import "@styles/global.scss";
+
+const {
+  title = "Ricardo Costa",
+  description = "Personal website and portfolio for Ricardo Costa, a software engineering MSc student focused on developer tools, static analysis, type systems, and reliable software."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const storedTheme = localStorage.getItem("theme");
+        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = storedTheme || preferredTheme;
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

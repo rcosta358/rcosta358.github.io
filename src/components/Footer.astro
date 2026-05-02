@@ -1,0 +1,108 @@
+---
+import { Mail } from "@lucide/astro";
+import BrandIcon from "@components/BrandIcon.astro";
+
+const contacts = [
+  { label: "Email", href: "mailto:rcosta.ms358@gmail.com", kind: "email" },
+  { label: "GitHub", href: "https://github.com/rcosta358", kind: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/rcosta358", kind: "linkedin" },
+  { label: "ORCID", href: "https://orcid.org/0009-0007-5674-4200", kind: "orcid" }
+];
+
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; {new Date().getFullYear()} Ricardo Costa</p>
+    <a class="source-link" href="https://github.com/rcosta358/rcosta358.github.io" target="_blank" rel="noreferrer">
+      <BrandIcon brand="github" size={16} />
+      Source
+    </a>
+    <div class="contact-icons" aria-label="Contact links">
+      {
+        contacts.map((contact) => {
+          return (
+            <a href={contact.href} aria-label={contact.label} title={contact.label} target={contact.href.startsWith("http") ? "_blank" : undefined} rel={contact.href.startsWith("http") ? "noreferrer" : undefined}>
+              {contact.kind === "email" ? <Mail size={19} aria-hidden="true" /> : <BrandIcon brand={contact.kind} size={19} />}
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: 1.5rem;
+    background: color-mix(in srgb, var(--surface) 80%, transparent);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+  }
+
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+
+  .source-link svg {
+    flex: 0 0 auto;
+    translate: 0 0.03em;
+  }
+
+  .source-link:hover {
+    color: var(--accent-strong);
+  }
+
+  .contact-icons a {
+    display: inline-grid;
+    width: 2.35rem;
+    height: 2.35rem;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--surface);
+  }
+
+  .contact-icons a:hover {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+  }
+
+  @media (max-width: 620px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .contact-icons {
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import { Mail } from "@lucide/astro";
+import BrandIcon from "@components/BrandIcon.astro";
+
+type Contact = {
+  label: string;
+  href: string;
+  kind: "email" | "github" | "linkedin" | "orcid" | "external";
+};
+
+const { contacts } = Astro.props as { contacts: Contact[] };
+---
+
+<div class="contact-links">
+  {
+    contacts.map((contact) => {
+      return (
+        <a href={contact.href} target={contact.href.startsWith("http") ? "_blank" : undefined} rel={contact.href.startsWith("http") ? "noreferrer" : undefined}>
+          {contact.kind === "email" || contact.kind === "external" ? <Mail size={18} aria-hidden="true" /> : <BrandIcon brand={contact.kind} size={18} />}
+          <span>{contact.label}</span>
+        </a>
+      );
+    })
+  }
+</div>
+
+<style lang="scss">
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.55rem 0.8rem;
+    color: var(--text);
+    background: var(--surface);
+    font-weight: 650;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  a:hover {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+  }
+</style>

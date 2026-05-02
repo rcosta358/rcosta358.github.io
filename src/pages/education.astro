@@ -1,0 +1,185 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const [about] = await getCollection("about");
+const educationEntries = (await getCollection("education")).sort((a, b) => a.data.order - b.data.order);
+
+if (!about) {
+  throw new Error("Missing about/profile.md content entry");
+}
+
+const splitFact = (fact: string) => {
+  const separatorIndex = fact.indexOf(":");
+
+  if (separatorIndex === -1) {
+    return { label: "", value: fact };
+  }
+
+  return {
+    label: fact.slice(0, separatorIndex),
+    value: fact.slice(separatorIndex + 1).trimStart()
+  };
+};
+
+const factLinks = new Map([["LASIGE", "https://lasige.pt"]]);
+const institutionLinks = new Map([
+  ["Faculdade de Ciências da Universidade de Lisboa (FCUL)", "https://ciencias.ulisboa.pt/"],
+  ["Instituto Superior de Engenharia de Lisboa (ISEL)", "https://www.isel.pt/"]
+]);
+
+const getFactLinkParts = (value: string) => {
+  const linkEntry = [...factLinks.entries()].find(([label]) => value.includes(label));
+
+  if (!linkEntry) {
+    return { before: value, linkLabel: "", href: "", after: "" };
+  }
+
+  const [linkLabel, href] = linkEntry;
+  const [before, after] = value.split(linkLabel);
+
+  return { before, linkLabel, href, after };
+};
+---
+
+<BaseLayout title="Education | Ricardo Costa">
+  <div class="container page">
+    <section class="hero compact">
+      <p class="eyebrow">Academic Background</p>
+      <h1>Education</h1>
+      <p>Computer Science and Engineering studies, research work, thesis focus, and academic projects.</p>
+    </section>
+
+    <section class="education-list" aria-label="Education history">
+      {
+        educationEntries.map(async (entry) => {
+          const { Content } = await render(entry);
+          return (
+          <article class="education-card card">
+            <div class="education-card-header">
+              <div>
+                <p>{entry.data.period}</p>
+                <h2>{entry.data.degree}</h2>
+              </div>
+              <strong>
+                {
+                  institutionLinks.has(entry.data.institution) ? (
+                    <a href={institutionLinks.get(entry.data.institution)} target="_blank" rel="noreferrer">
+                      {entry.data.institution}
+                    </a>
+                  ) : (
+                    entry.data.institution
+                  )
+                }
+              </strong>
+            </div>
+            <ul class="education-facts">
+              {
+                entry.data.facts.map((fact) => {
+                  const { label, value } = splitFact(fact);
+                  const linkParts = getFactLinkParts(value);
+                  return (
+                    <li>
+                      {label ? <strong>{label}:</strong> : null}
+                      {label ? " " : null}
+                      {linkParts.before}
+                      {
+                        linkParts.linkLabel ? (
+                          <a href={linkParts.href} target="_blank" rel="noreferrer">
+                            {linkParts.linkLabel}
+                          </a>
+                        ) : null
+                      }
+                      {linkParts.after}
+                    </li>
+                  );
+                })
+              }
+            </ul>
+            <div class="education-description">
+              <Content />
+            </div>
+          </article>
+          );
+        })
+      }
+    </section>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .compact {
+    padding-bottom: 2rem;
+  }
+
+  .education-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .education-card {
+    padding: clamp(1.35rem, 3vw, 2.25rem);
+  }
+
+  .education-card-header {
+    display: grid;
+    grid-template-columns: 1fr minmax(180px, auto);
+    gap: 1rem;
+    align-items: start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .education-card-header p {
+    margin: 0 0 0.45rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+  }
+
+  .education-card-header h2 {
+    margin: 0;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    line-height: 1.2;
+  }
+
+  .education-card-header strong {
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  .education-card-header strong a {
+    color: inherit;
+  }
+
+  .education-facts {
+    display: grid;
+    gap: 0.55rem;
+    margin: 1.2rem 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+  }
+
+  .education-description p {
+    max-width: 820px;
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .education-description p + p {
+    margin-top: 0.8rem;
+  }
+
+  @media (max-width: 680px) {
+    .education-card-header {
+      grid-template-columns: 1fr;
+    }
+
+    .education-card-header strong {
+      text-align: left;
+    }
+  }
+</style>

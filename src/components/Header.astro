@@ -1,0 +1,156 @@
+---
+import { Moon, Sun } from "@lucide/astro";
+
+const navItems = [
+  { href: "/about/", label: "About" },
+  { href: "/projects/", label: "Projects" },
+  { href: "/education/", label: "Education" }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/about/" aria-label="Ricardo Costa home">
+      <span>Ricardo Costa</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      {
+        navItems.map((item) => (
+          <a href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+      <Sun class="sun" size={18} aria-hidden="true" />
+      <Moon class="moon" size={18} aria-hidden="true" />
+    </button>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const toggle = document.querySelector("[data-theme-toggle]");
+    const storedTheme = localStorage.getItem("theme");
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const initialTheme = storedTheme || preferredTheme;
+
+    root.dataset.theme = initialTheme;
+    toggle?.setAttribute("aria-label", `Switch to ${initialTheme === "dark" ? "light" : "dark"} theme`);
+
+    toggle?.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = nextTheme;
+      localStorage.setItem("theme", nextTheme);
+      toggle.setAttribute("aria-label", `Switch to ${nextTheme === "dark" ? "light" : "dark"} theme`);
+    });
+  })();
+</script>
+
+<style lang="scss">
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(18px);
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.75rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    color: var(--text);
+    font-size: 1.16rem;
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.32rem;
+    background: var(--surface);
+  }
+
+  nav a {
+    border-radius: 999px;
+    padding: 0.58rem 0.92rem;
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  nav a:hover,
+  nav a[aria-current="page"] {
+    color: var(--text);
+    background: var(--surface-strong);
+  }
+
+  .theme-toggle {
+    display: inline-grid;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    background: var(--surface);
+    cursor: pointer;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+  }
+
+  .moon {
+    display: none;
+  }
+
+  :global(:root[data-theme="dark"]) .sun {
+    display: none;
+  }
+
+  :global(:root[data-theme="dark"]) .moon {
+    display: block;
+  }
+
+  @media (max-width: 660px) {
+    .header-inner {
+      grid-template-columns: 1fr auto;
+      gap: 0.75rem;
+      padding-block: 0.65rem;
+    }
+
+    nav {
+      grid-column: 1 / -1;
+      justify-content: space-between;
+      order: 3;
+      width: 100%;
+    }
+
+    nav a {
+      flex: 1;
+      text-align: center;
+    }
+  }
+</style>
