@@ -7,7 +7,7 @@ url: https://github.com/Programmaters/Sketch.io
 technologies: [TypeScript, React, Node.js, JavaScript, Socket.IO, p5.js]
 keywords: [multiplayer drawing game, websockets]
 role: Co-author
-context: Friend project
+context: Friend Project
 ---
 
 Drawing and guessing multiplayer game inspired by Skribbl.io, built with a Socket.IO and p5.js.

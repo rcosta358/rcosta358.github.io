@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/Pathfinding-Visualizer
 technologies: [Kotlin, Compose Desktop]
 keywords: [pathfinding, algorithm visualization, desktop app, interactive ui]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Kotlin Compose Desktop application for interactively exploring pathfinding algorithms through direct visual feedback.

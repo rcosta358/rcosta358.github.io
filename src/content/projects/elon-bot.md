@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/elon-bot
 technologies: [Python]
 keywords: [discord bot, slash commands, API integration, command-driven interactions]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Python Discord bot with slash commands for greetings, games, arithmetic, status changes, translation, GitHub repository lookup, and other utility actions.

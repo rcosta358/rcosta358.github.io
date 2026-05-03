@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/High-Contrast
 technologies: [Unity, C#]
 keywords: [mobile game, 2d platformer, game dev]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Unity and C# side project for exploring game development through a simple mobile platformer.

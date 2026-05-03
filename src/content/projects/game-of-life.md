@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/game-of-life
 technologies: [Python, Pygame]
 keywords: [simulation, algorithms]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Pygame implementation of the classic Conway's Game of Life, that allows users to place cells on a grid and watch the simulation evolve through generations.

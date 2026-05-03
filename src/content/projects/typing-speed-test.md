@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/Typing-Speed-Test
 technologies: [Python]
 keywords: [typing speed test, cli]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 CLI typing speed test program that displays words per minute in real time as the user types a sentence fetched from the [ZenQuotes API](https://zenquotes.io/).

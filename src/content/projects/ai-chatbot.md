@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/AI-Chatbot
 technologies: [Python, TensorFlow]
 keywords: [ai chatbot, deep learning]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Simple conversational AI project built with Python and TensorFlow as practice with deep learning concepts.

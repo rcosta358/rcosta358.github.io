@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/OpenCV-Object-Detection
 technologies: [Python, OpenCV]
 keywords: [computer vision, object detection, image processing]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Python and OpenCV computer vision project for experimenting with image processing and real-time object detection.

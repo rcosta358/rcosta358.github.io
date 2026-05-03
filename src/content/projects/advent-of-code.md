@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/AdventOfCode
 technologies: [Python]
 keywords: [advent of code, programming puzzles, algorithms, problem solving]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Python solutions to Advent of Code challenges across multiple years, focused on algorithmic problem solving and programming practice.

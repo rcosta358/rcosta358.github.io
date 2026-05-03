@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/JSON-Serializer
 technologies: [Rust, Go]
 keywords: [json, serialization, deserialization]
 role: Author
-context: Academic project
+context: Academic Project
 ---
 
 Rust and Go library for converting data to and from JSON, with accessor utilities and a pipeline-oriented internal architecture.

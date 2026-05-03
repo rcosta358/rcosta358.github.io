@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/GomokuWeb
 technologies: [TypeScript, React, Spring Boot, PostgreSQL, Docker]
 keywords: [full-stack web app, web api, board game]
 role: Co-author
-context: Academic project
+context: Academic Project
 ---
 
 Web API and React frontend for playing Gomoku online, with user authentication, game state management, and a responsive UI.

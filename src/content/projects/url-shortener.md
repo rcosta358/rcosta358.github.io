@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/url-shortener
 technologies: [Rust, Axum]
 keywords: [url shortener, rest api, web application]
 role: Author
-context: Personal project
+context: Personal Project
 ---
 
 Simple REST API for shortening URLs built with the Axum framework.

@@ -7,7 +7,7 @@ url: https://github.com/rcosta358/Board.io
 technologies: [Kotlin, PostgreSQL, Http4k, JavaScript]
 keywords: [task management, todo app, kanban]
 role: Co-author
-context: Academic project
+context: Academic Project
 ---
 
 Trello-like tool for organizing work through boards, lists, and cards in a practical task management workflow.
