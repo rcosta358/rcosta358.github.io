@@ -1,0 +1,25 @@
+# Crawl and AI content-use policy for https://rcosta358.github.io
+# https://www.rfc-editor.org/rfc/rfc9309
+
+Sitemap: https://rcosta358.github.io/sitemap.xml
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
