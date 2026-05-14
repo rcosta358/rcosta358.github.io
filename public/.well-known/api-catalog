@@ -1,0 +1,16 @@
+{
+  "resources": [
+    {
+      "name": "Sitemap",
+      "url": "https://rcosta358.github.io/sitemap.xml",
+      "type": "application/xml",
+      "description": "Canonical public URLs for this site."
+    },
+    {
+      "name": "Robots policy",
+      "url": "https://rcosta358.github.io/robots.txt",
+      "type": "text/plain",
+      "description": "Crawler access rules and AI content-use preferences."
+    }
+  ]
+}
