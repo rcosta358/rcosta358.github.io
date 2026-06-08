@@ -30,7 +30,51 @@ const about = defineCollection({
         group: z.string(),
         items: z.array(z.string())
       })
-    )
+    ),
+    experience: z
+      .array(
+        z.object({
+          organization: z.string(),
+          role: z.string(),
+          period: z.string(),
+          location: z.string(),
+          project: z.string(),
+          contributions: z.string(),
+          funding: z.string().optional(),
+          href: z.string().optional()
+        })
+      )
+      .optional(),
+    talks: z
+      .array(
+        z.object({
+          title: z.string(),
+          event: z.string(),
+          location: z.string(),
+          role: z.string(),
+          href: z.string().optional()
+        })
+      )
+      .optional(),
+    publications: z
+      .array(
+        z.object({
+          title: z.string(),
+          authors: z.string(),
+          status: z.string()
+        })
+      )
+      .optional(),
+    posters: z
+      .array(
+        z.object({
+          title: z.string(),
+          authors: z.string(),
+          href: z.string().optional(),
+          note: z.string().optional()
+        })
+      )
+      .optional()
   })
 });
 

@@ -1,0 +1,151 @@
+---
+import { getEntry } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const about = await getEntry("about", "profile");
+if (!about) {
+  throw new Error("Missing about/profile.md content entry");
+}
+
+const experience = about.data.experience ?? [];
+const talks = about.data.talks ?? [];
+const publications = about.data.publications ?? [];
+const posters = about.data.posters ?? [];
+---
+
+<BaseLayout title="Research | Ricardo Costa">
+  <div class="container page">
+    <section class="hero compact">
+      <p class="eyebrow">LASIGE</p>
+      <h1>Research</h1>
+      <p>Research work, talks, publications, and posters around software verification, type systems, and developer tools.</p>
+    </section>
+
+    {
+      experience.length ? (
+        <section class="section" aria-label="Research experience">
+          <div class="section-header">
+            <h2>Experience</h2>
+          </div>
+          <div class="education-list">
+            {experience.map((item) => (
+              <article class="education-card card">
+                <div class="education-card-header">
+                  <div>
+                    <p>{item.period}</p>
+                    <h2>{item.role}</h2>
+                  </div>
+                  <strong>
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noreferrer">
+                        {item.organization}
+                      </a>
+                    ) : (
+                      item.organization
+                    )}
+                  </strong>
+                </div>
+                <ul class="education-facts">
+                  <li><strong>Contributions:</strong> {item.contributions}</li>
+                  {item.funding ? <li><strong>Funding:</strong> {item.funding}</li> : null}
+                  <li><strong>Location:</strong> {item.location}</li>
+                </ul>
+                <div class="education-description">
+                  <p>{item.project}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null
+    }
+
+    {
+      talks.length ? (
+        <section class="section" aria-label="Talks">
+          <div class="section-header">
+            <h2>Talks</h2>
+          </div>
+          <ul class="output-list">
+            {talks.map((talk) => (
+              <li>
+                {talk.href ? (
+                  <a href={talk.href} target="_blank" rel="noreferrer">{talk.title}</a>
+                ) : (
+                  <strong>{talk.title}</strong>
+                )}
+                <span>{talk.event}, {talk.location} · {talk.role}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null
+    }
+
+    {
+      publications.length ? (
+        <section class="section" aria-label="Publications">
+          <div class="section-header">
+            <h2>Publications</h2>
+          </div>
+          <ul class="output-list">
+            {publications.map((publication) => (
+              <li>
+                <strong>{publication.title}</strong>
+                <span>{publication.authors} · {publication.status}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null
+    }
+
+    {
+      posters.length ? (
+        <section class="section" aria-label="Posters">
+          <div class="section-header">
+            <h2>Posters</h2>
+          </div>
+          <ul class="output-list">
+            {posters.map((poster) => (
+              <li>
+                {poster.href ? (
+                  <a href={poster.href} target="_blank" rel="noreferrer">{poster.title}</a>
+                ) : (
+                  <strong>{poster.title}</strong>
+                )}
+                <span>{poster.authors}{poster.note ? ` · ${poster.note}` : ""}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null
+    }
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .compact {
+    padding-bottom: 2rem;
+  }
+
+  .output-list span {
+    color: var(--muted);
+  }
+
+  .output-list {
+    display: grid;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .output-list li {
+    display: grid;
+    gap: 0.25rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+</style>
