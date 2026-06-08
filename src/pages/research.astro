@@ -11,6 +11,9 @@ const experience = about.data.experience ?? [];
 const talks = about.data.talks ?? [];
 const publications = about.data.publications ?? [];
 const posters = about.data.posters ?? [];
+const highlightedAuthor = about.data.name;
+
+const authorParts = (authors: string) => authors.split(highlightedAuthor);
 ---
 
 <BaseLayout title="Research | Ricardo Costa">
@@ -74,7 +77,15 @@ const posters = about.data.posters ?? [];
                 ) : (
                   <strong>{talk.title}</strong>
                 )}
-                <span>{talk.event}, {talk.location} · {talk.role}</span>
+                <span>
+                  {talk.eventHref ? (
+                    <a href={talk.eventHref} target="_blank" rel="noreferrer">{talk.event}</a>
+                  ) : (
+                    talk.event
+                  )}
+                  {", "}
+                  {talk.location} · {talk.role}
+                </span>
               </li>
             ))}
           </ul>
@@ -92,7 +103,18 @@ const posters = about.data.posters ?? [];
             {publications.map((publication) => (
               <li>
                 <strong>{publication.title}</strong>
-                <span>{publication.authors} · {publication.status}</span>
+                <span>
+                  {
+                    authorParts(publication.authors).map((part, index, parts) => (
+                      <>
+                        {part}
+                        {index < parts.length - 1 ? <u>{highlightedAuthor}</u> : null}
+                      </>
+                    ))
+                  }
+                  {" · "}
+                  {publication.status}
+                </span>
               </li>
             ))}
           </ul>
@@ -114,7 +136,17 @@ const posters = about.data.posters ?? [];
                 ) : (
                   <strong>{poster.title}</strong>
                 )}
-                <span>{poster.authors}{poster.note ? ` · ${poster.note}` : ""}</span>
+                <span>
+                  {
+                    authorParts(poster.authors).map((part, index, parts) => (
+                      <>
+                        {part}
+                        {index < parts.length - 1 ? <u>{highlightedAuthor}</u> : null}
+                      </>
+                    ))
+                  }
+                  {poster.note ? ` · ${poster.note}` : ""}
+                </span>
               </li>
             ))}
           </ul>

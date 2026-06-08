@@ -61,9 +61,10 @@ experience:
 talks:
   - title: "LiquidJava: Catch Bugs at Compile Time with Liquid Types"
     event: JNation 2026
+    eventHref: https://jnation.pt
     location: Coimbra, Portugal
     role: Co-Speaker
-    href: https://jnation.pt
+    href: https://www.youtube.com/watch?v=HKRU4-v98fU
 publications:
   - title: "Barista: Synthesizing Typestate Specifications with LLM Agents"
     authors: Catarina Gamboa, Paulo Canelas, Ricardo Costa, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca

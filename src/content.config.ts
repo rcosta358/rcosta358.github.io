@@ -50,6 +50,7 @@ const about = defineCollection({
         z.object({
           title: z.string(),
           event: z.string(),
+          eventHref: z.string().optional(),
           location: z.string(),
           role: z.string(),
           href: z.string().optional()
