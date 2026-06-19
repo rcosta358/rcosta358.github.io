@@ -49,13 +49,10 @@ const authorParts = (authors: string) => authors.split(highlightedAuthor);
                   </strong>
                 </div>
                 <ul class="education-facts">
+                  <li><strong>Project:</strong> {item.project}</li>
                   <li><strong>Contributions:</strong> {item.contributions}</li>
                   {item.funding ? <li><strong>Funding:</strong> {item.funding}</li> : null}
-                  <li><strong>Location:</strong> {item.location}</li>
                 </ul>
-                <div class="education-description">
-                  <p>{item.project}</p>
-                </div>
               </article>
             ))}
           </div>

@@ -37,7 +37,7 @@ const about = defineCollection({
           organization: z.string(),
           role: z.string(),
           period: z.string(),
-          location: z.string(),
+          location: z.string().optional(),
           project: z.string(),
           contributions: z.string(),
           funding: z.string().optional(),
