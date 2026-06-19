@@ -57,7 +57,7 @@ experience:
     href: https://lasige.pt/member/ricardo-manuel-costa/
     project: Improving the usability and adoption of LiquidJava, a refinement type checker for Java, through enhanced verification feedback, IDE support, and overall developer experience.
     contributions: 90+ merged pull requests to LiquidJava and 70+ merged pull requests to its VS Code extension.
-    funding: Scholarship funded by FCiências.ID.
+    funding: FCT | LASIGE.
 talks:
   - title: "LiquidJava: Catch Bugs at Compile Time with Liquid Types"
     event: JNation 2026
