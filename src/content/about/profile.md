@@ -68,7 +68,8 @@ talks:
 publications:
   - title: "Barista: Synthesizing Typestate Specifications with LLM Agents"
     authors: Catarina Gamboa, Paulo Canelas, Ricardo Costa, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca
-    status: Under Review
+    status: ASE 2026
+    statusHref: https://conf.researchr.org/home/ase-2026
 posters:
   - title: Improving the Usability of LiquidJava
     authors: Ricardo Costa, Catarina Gamboa, Alcides Fonseca

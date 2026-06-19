@@ -62,7 +62,8 @@ const about = defineCollection({
         z.object({
           title: z.string(),
           authors: z.string(),
-          status: z.string()
+          status: z.string(),
+          statusHref: z.string().optional()
         })
       )
       .optional(),

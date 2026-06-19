@@ -113,7 +113,13 @@ const authorParts = (authors: string) => authors.split(highlightedAuthor);
                     ))
                   }
                   {" · "}
-                  {publication.status}
+                  {publication.statusHref ? (
+                    <a href={publication.statusHref} target="_blank" rel="noreferrer">
+                      {publication.status}
+                    </a>
+                  ) : (
+                    publication.status
+                  )}
                 </span>
               </li>
             ))}
