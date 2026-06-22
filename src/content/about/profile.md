@@ -3,9 +3,9 @@ title: About
 name: Ricardo Costa
 location: Lisbon, Portugal
 summary:
-  - Software Engineering MSc student focused on building reliable software and developer tools.
-  - Strongest interests are static analysis, type systems, compilers, software verification, and tools that improve the way developers code.
-  - Also experienced in full-stack web development, cloud computing, and mobile applications.
+  - Software engineering student focused on building software that can help other developers build their own. Strongest interests in software verification, compilers, and developer tools.
+  - Currently working on LiquidJava, improving its verification feedback, IDE integration, and overall developer experience.
+  - Also experienced in full-stack development, cloud computing, and mobile development.
   - You can check out my CV [here](https://rcosta358.github.io/RicardoCostaCV.pdf).
 contacts:
   - label: Email
@@ -21,12 +21,12 @@ contacts:
     href: https://orcid.org/0009-0007-5674-4200
     kind: orcid
 interests:
-  - Static analysis
-  - Type systems
-  - Compilers
-  - Liquid types
   - Software verification
   - Developer tools
+  - Compilers
+  - Static analysis
+  - Type systems
+  - Liquid types
 education:
   - degree: MSc in Computer Science and Engineering
     institution: Faculdade de Ciências da Universidade de Lisboa (FCUL)
@@ -38,7 +38,7 @@ education:
     detail: Final grade 15/20; final project NoteSpace graded 18/20.
 skills:
   - group: Programming Languages
-    items: [Python, Java, JavaScript, TypeScript, Rust, Kotlin, Go, C, C#]
+    items: [Python, Java, JavaScript, TypeScript, Kotlin, Rust, Go, C, C#]
   - group: Compilers and Static Analysis
     items: [Parsing, Type Systems, Liquid Types, Typestates, SMT Solvers, LLVM]
   - group: Cloud and DevOps
