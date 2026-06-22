@@ -39,22 +39,24 @@ education:
 skills:
   - group: Programming Languages
     items: [Python, Java, JavaScript, TypeScript, Kotlin, Rust, Go, C, C#]
-  - group: Compilers and Static Analysis
-    items: [Parsing, Type Systems, Liquid Types, Typestates, SMT Solvers, LLVM]
-  - group: Cloud and DevOps
-    items: [Google Cloud Platform, Cloudflare Workers, Docker, Kubernetes, Git, GitHub Actions, Linux]
-  - group: Web Development
-    items: [HTML, CSS, React, Node.js, Express, Spring Boot, Vite, Webpack, REST APIs, WebSockets, Socket.IO]
-  - group: Mobile and Desktop Development
-    items: [Android, Jetpack Compose, Compose Desktop, Electron, Unity]
-  - group: Databases and Storage
-    items: [PostgreSQL, Firestore, MongoDB, Elasticsearch, Cloudflare KV]
+  - group: Cloud & DevOps
+    items: [GCP, Cloudflare, Docker, Kubernetes, Git, GitHub Actions, Linux]
+  - group: Full-Stack Development
+    items: [REST, gRPC, Microservices, Spring Boot, Node.js, Express, React, Vite, Webpack, HTML, CSS]
+  - group: Mobile Development
+    items: [Android, Jetpack Compose]
+  - group: Databases
+    items: [PostgreSQL, Firestore, MongoDB, Elasticsearch]
+  - group: Compilers & Static Analysis
+    items: [Parsing, Type Systems, Liquid Types, SMT Solvers, LLVM]
+  - group: Agentic AI
+    items: [Codex, Claude Code, Cursor, GitHub Copilot]
 experience:
   - organization: LASIGE Research Unit
     role: Researcher
-    period: 2025-Present
+    period: 2025 – Present
     href: https://lasige.pt/member/ricardo-manuel-costa/
-    project: Improving the usability of LiquidJava, a refinement type checker for Java, through enhanced verification feedback, IDE support, and overall developer experience
+    project: Improving the usability of LiquidJava, a liquid type system for Java, through enhanced verification feedback, IDE integration, and overall developer experience
     contributions: 100+ merged pull requests to LiquidJava and 70+ merged pull requests to its VS Code extension
     funding: FCT | LASIGE
 talks:
@@ -67,7 +69,7 @@ talks:
 publications:
   - title: "Barista: Synthesizing Typestate Specifications with LLM Agents"
     authors: Catarina Gamboa, Paulo Canelas, Ricardo Costa, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca
-    status: ASE 2026
+    status: Accepted at ASE 2026
     statusHref: https://conf.researchr.org/home/ase-2026
 posters:
   - title: Improving the Usability of LiquidJava
