@@ -3,9 +3,9 @@ title: About
 name: Ricardo Costa
 location: Lisbon, Portugal
 summary:
-  - Software engineering student focused on building software that can help other developers build their own. Strongest interests in software verification, compilers, and developer tools.
-  - Currently working on LiquidJava, improving its verification feedback, IDE integration, and overall developer experience.
-  - Also experienced in full-stack development, cloud computing, and mobile development.
+  - Software engineering student focused on building software that helps other developers build their own. Main interests include software verification, developer tools, and agentic AI workflows.
+  - Currently working on LiquidJava, a static analysis tool that detects violations of properties specified through Java annotations at compile time.
+  - Also experienced in backend systems, web and mobile applications, and cloud computing.
   - You can check out my CV [here](https://rcosta358.github.io/RicardoCostaCV.pdf).
 contacts:
   - label: Email
@@ -23,6 +23,7 @@ contacts:
 interests:
   - Software verification
   - Developer tools
+  - Agentic AI workflows
   - Compilers
   - Static analysis
   - Type systems
@@ -40,17 +41,19 @@ skills:
   - group: Programming Languages
     items: [Python, Java, JavaScript, TypeScript, Kotlin, Rust, Go, C, C#]
   - group: Cloud & DevOps
-    items: [GCP, Cloudflare, Docker, Kubernetes, Git, GitHub Actions, Linux]
-  - group: Full-Stack Development
-    items: [REST, gRPC, Microservices, Spring Boot, Node.js, Express, React, Vite, Webpack, HTML, CSS]
+    items: [GCP, Cloudflare Workers, Docker, Kubernetes, Git, GitHub Actions, CI/CD, Linux]
+  - group: Backend
+    items: [REST, gRPC, Microservices, WebSockets, Spring Boot, Node.js, Express, Socket.IO, Maven, Gradle]
+  - group: Frontend
+    items: [React, HTML, CSS, Vite, Webpack, PWA]
   - group: Mobile Development
     items: [Android, Jetpack Compose]
   - group: Databases
-    items: [PostgreSQL, Firestore, MongoDB, Elasticsearch]
-  - group: Compilers & Static Analysis
-    items: [Parsing, Type Systems, Liquid Types, SMT Solvers, LLVM]
-  - group: Agentic AI
-    items: [Codex, Claude Code, Cursor, GitHub Copilot]
+    items: [PostgreSQL, Firestore, MongoDB, Cloudflare KV, Elasticsearch]
+  - group: Compilers, Static Analysis & Developer Tools
+    items: [Parsers, Type Systems, SMT Solvers, LLVM, LSP, JSON-RPC]
+  - group: LLM Integration
+    items: [LLM Agents, Cloudflare Workers AI, MCP]
 experience:
   - organization: LASIGE Research Unit
     role: Researcher
