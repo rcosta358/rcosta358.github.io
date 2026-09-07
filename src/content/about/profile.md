@@ -50,10 +50,14 @@ skills:
     items: [Android, Jetpack Compose]
   - group: Databases
     items: [PostgreSQL, Firestore, MongoDB, Cloudflare KV, Elasticsearch]
-  - group: Compilers, Static Analysis & Developer Tools
-    items: [Parsers, Type Systems, SMT Solvers, LLVM, LSP, JSON-RPC]
-  - group: LLM Integration
-    items: [LLM Agents, Cloudflare Workers AI, MCP]
+  - group: Compilers & Static Analysis
+    items: [Parsers, Type Systems, SMT Solvers, LLVM]
+  - group: Developer Tooling
+    items: [VS Code Extension API, LSP, JSON-RPC]
+  - group: Testing
+    items: [Unit Testing, Integration Testing, Property-Based Testing]
+  - group: AI Engineering
+    items: [AI Agents, Agentic Workflows, Cloudflare Workers AI, MCP]
 experience:
   - organization: LASIGE Research Unit
     role: Researcher
@@ -72,7 +76,7 @@ talks:
 publications:
   - title: "Barista: Synthesizing Typestate Specifications with LLM Agents"
     authors: Catarina Gamboa, Paulo Canelas, Ricardo Costa, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca
-    status: Accepted at ASE 2026
+    status: Accepted at Automated Software Engineering (ASE) 2026
     statusHref: https://conf.researchr.org/home/ase-2026
 posters:
   - title: Improving the Usability of LiquidJava
