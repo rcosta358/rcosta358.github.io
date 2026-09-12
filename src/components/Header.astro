@@ -1,5 +1,5 @@
 ---
-import { Moon, Sun } from "@lucide/astro";
+import { Menu, Moon, Sun, X } from "@lucide/astro";
 
 const navItems = [
   { href: "/about/", label: "About" },
@@ -14,10 +14,14 @@ const currentPath = Astro.url.pathname;
 
 <header class="site-header">
   <div class="container header-inner">
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>
+      <Menu class="menu-icon" size={20} aria-hidden="true" />
+      <X class="close-icon" size={20} aria-hidden="true" />
+    </button>
     <a class="brand" href="/about/" aria-label="Ricardo Costa home">
       <span>Ricardo Costa</span>
     </a>
-    <nav aria-label="Primary navigation">
+    <nav id="primary-navigation" aria-label="Primary navigation">
       {
         navItems.map((item) => (
           <a
@@ -41,6 +45,8 @@ const currentPath = Astro.url.pathname;
 <script is:inline>
   (() => {
     const root = document.documentElement;
+    const header = document.querySelector(".site-header");
+    const menuToggle = document.querySelector("[data-menu-toggle]");
     const toggle = document.querySelector("[data-theme-toggle]");
     const storedTheme = localStorage.getItem("theme");
     const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -54,6 +60,26 @@ const currentPath = Astro.url.pathname;
       root.dataset.theme = nextTheme;
       localStorage.setItem("theme", nextTheme);
       toggle.setAttribute("aria-label", `Switch to ${nextTheme === "dark" ? "light" : "dark"} theme`);
+    });
+
+    const closeMenu = () => {
+      header?.classList.remove("menu-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "Open navigation");
+    };
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = header?.classList.toggle("menu-open") ?? false;
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", `${isOpen ? "Close" : "Open"} navigation`);
+    });
+
+    document.querySelectorAll("#primary-navigation a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
     });
   })();
 </script>
@@ -84,6 +110,35 @@ const currentPath = Astro.url.pathname;
     font-size: 1.5rem;
     font-weight: 850;
     text-decoration: none;
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    background: var(--surface);
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+  }
+
+  .close-icon {
+    display: none;
+  }
+
+  .menu-open .menu-icon {
+    display: none;
+  }
+
+  .menu-open .close-icon {
+    display: block;
   }
 
   nav {
@@ -143,18 +198,43 @@ const currentPath = Astro.url.pathname;
 
   @media (max-width: 660px) {
     .header-inner {
-      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "menu brand theme"
+        "nav nav nav";
+      grid-template-columns: auto minmax(0, 1fr) auto;
       gap: 0.75rem;
       padding-block: 0.65rem;
     }
 
+    .menu-toggle {
+      display: inline-grid;
+      grid-area: menu;
+    }
+
+    .brand {
+      grid-area: brand;
+      min-width: 0;
+      font-size: clamp(1.15rem, 5vw, 1.5rem);
+    }
+
+    .theme-toggle {
+      grid-area: theme;
+    }
+
     nav {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-column: 1 / -1;
-      order: 3;
+      display: none;
+      grid-area: nav;
       width: 100%;
+      flex-direction: column;
+      align-items: stretch;
       gap: 0.25rem;
+      border-radius: 1rem;
+      padding: 0.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .menu-open nav {
+      display: flex;
     }
 
     nav a {
