@@ -149,14 +149,17 @@ const currentPath = Astro.url.pathname;
     }
 
     nav {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-column: 1 / -1;
-      justify-content: space-between;
       order: 3;
       width: 100%;
+      gap: 0.25rem;
     }
 
     nav a {
-      flex: 1;
+      min-width: 0;
+      padding-inline: 0.35rem;
       text-align: center;
     }
   }
