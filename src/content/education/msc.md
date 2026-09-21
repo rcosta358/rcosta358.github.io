@@ -12,4 +12,4 @@ facts:
 
 LiquidJava is an additional type checker for Java that uses liquid types and typestates to provide stronger compile-time guarantees about programs, enabling developers to catch more bugs earlier in the development process.
 
-The thesis focuses on improving the developer experience through better diagnostic messages, enhanced VS Code extension support, and improvements to the core verifier.
+The thesis focuses on improving the developer experience through better verification feedback, enhanced IDE integration, and improvements to the core verifier.
