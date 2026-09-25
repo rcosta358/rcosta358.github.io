@@ -27,7 +27,6 @@ interests:
   - Compilers
   - Static analysis
   - Type systems
-  - Liquid types
 education:
   - degree: MSc in Computer Science and Engineering
     institution: Faculdade de Ciências da Universidade de Lisboa (FCUL)
@@ -58,11 +57,21 @@ skills:
     items: [AI Agents, Agentic Workflows, Cloudflare Workers AI, MCP]
 experience:
   - organization: LASIGE Research Unit
-    role: Researcher
+    role: Software Engineering Researcher
     period: 2025 – Present
     href: https://lasige.pt/member/ricardo-manuel-costa/
-    project: Improving the usability of LiquidJava, a liquid type system for Java, through enhanced verification feedback, IDE integration, and overall developer experience
-    contributions: 100+ merged pull requests to LiquidJava and 70+ merged pull requests to its VS Code extension
+    project: Improving the usability of LiquidJava, a liquid type system for Java, through enhanced verification feedback, extended IDE support, and a better overall developer experience.
+    projectHref: https://github.com/liquid-java/liquidjava
+    workstreams:
+      - label: Verification Feedback
+        detail: Redesigned diagnostics and implemented traceable predicate simplification, counterexamples, and actionable hints to make verification failures easier to understand and resolve.
+      - label: IDE Integration
+        detail: Enhanced the VS Code extension with syntax highlighting, autocomplete, hover information, and interactive views for exploring diagnostics, inspecting the verification context, and visualizing typestate protocols.
+      - label: Verifier Improvements
+        detail: Improved verification robustness and predictability through multiple error reporting, complete project verification, and closer alignment with Java syntax and semantics.
+    contributions: 120+ merged pull requests to the verifier and 80+ to its VS Code extension.
+    verifierHref: https://github.com/liquid-java/liquidjava
+    extensionHref: https://github.com/liquid-java/vscode-liquidjava
     funding: FCT | LASIGE
 events:
   - role: Speaker

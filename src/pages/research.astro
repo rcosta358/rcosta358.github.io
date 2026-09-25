@@ -14,6 +14,8 @@ const posters = about.data.posters ?? [];
 const highlightedAuthor = about.data.name;
 
 const authorParts = (authors: string) => authors.split(highlightedAuthor);
+const contributionParts = (contributions: string) =>
+  contributions.split(/\b(verifier|VS Code extension)\b/g);
 ---
 
 <BaseLayout title="Research | Ricardo Costa">
@@ -49,9 +51,41 @@ const authorParts = (authors: string) => authors.split(highlightedAuthor);
                   </strong>
                 </div>
                 <ul class="education-facts">
-                  <li><strong>Project:</strong> {item.project}</li>
-                  <li><strong>Contributions:</strong> {item.contributions}</li>
-                  {item.funding ? <li><strong>Funding:</strong> {item.funding}</li> : null}
+                  <li>
+                    <strong>Project:</strong>{" "}
+                    {item.projectHref ? (
+                      <>
+                        {item.project.split("LiquidJava")[0]}
+                        <a href={item.projectHref} target="_blank" rel="noreferrer">LiquidJava</a>
+                        {item.project.split("LiquidJava").slice(1).join("LiquidJava")}
+                      </>
+                    ) : item.project}
+                    {item.workstreams?.length ? (
+                      <ul class="research-workstreams">
+                        {item.workstreams.map((workstream) => (
+                          <li><strong>{workstream.label}:</strong> {workstream.detail}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </li>
+                  <li>
+                    <strong>Contributions:</strong>{" "}
+                    {contributionParts(item.contributions).map((part) =>
+                      part === "verifier" && item.verifierHref ? (
+                        <a href={item.verifierHref} target="_blank" rel="noreferrer">{part}</a>
+                      ) : part === "VS Code extension" && item.extensionHref ? (
+                        <a href={item.extensionHref} target="_blank" rel="noreferrer">{part}</a>
+                      ) : part
+                    )}
+                  </li>
+                  {item.funding ? (
+                    <li>
+                      <strong>Funding:</strong>{" "}
+                      {item.fundingHref ? (
+                        <a href={item.fundingHref} target="_blank" rel="noreferrer">{item.funding}</a>
+                      ) : item.funding}
+                    </li>
+                  ) : null}
                 </ul>
               </article>
             ))}
@@ -185,6 +219,14 @@ const authorParts = (authors: string) => authors.split(highlightedAuthor);
     gap: 0.25rem;
     border-top: 1px solid var(--border);
     padding-top: 1rem;
+  }
+
+  .research-workstreams {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    list-style: disc;
   }
 
 </style>

@@ -39,8 +39,18 @@ const about = defineCollection({
           period: z.string(),
           location: z.string().optional(),
           project: z.string(),
+          projectHref: z.string().optional(),
+          workstreams: z.array(
+            z.object({
+              label: z.string(),
+              detail: z.string()
+            })
+          ).optional(),
           contributions: z.string(),
+          verifierHref: z.string().optional(),
+          extensionHref: z.string().optional(),
           funding: z.string().optional(),
+          fundingHref: z.string().optional(),
           href: z.string().optional()
         })
       )
