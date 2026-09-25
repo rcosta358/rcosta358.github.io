@@ -20,6 +20,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Prepare CV output directory
+        run: mkdir -p cv/build
+      - name: Compile CV
+        uses: xu-cheng/latex-action@v4
+        with:
+          working_directory: cv
+          root_file: main.tex
+          texlive_version: 2026
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
+      - name: Publish generated CV PDF
+        run: cp cv/build/main.pdf public/RicardoCostaCV.pdf
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

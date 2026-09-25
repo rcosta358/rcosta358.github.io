@@ -1,0 +1,270 @@
+%-------------------------
+% Resume in Latex
+% Author : Harshibar
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+\input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+\let\oldhref\href
+\newcommand{\plainhref}[2]{\oldhref{#1}{#2}}
+\renewcommand{\href}[2]{\oldhref{#1}{#2\,{\color{dark-grey}\scriptsize\faLink}}}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\setlength{\footskip}{4.1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      #3 & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Ricardo Costa} \\ \vspace{5pt}
+    \small \faMapMarker* \hspace{2pt}\texttt{Lisbon, Portugal} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} \plainhref{mailto:rcosta.ms358@gmail.com}{\texttt{rcosta.ms358@gmail.com}} \hspace{1pt} $|$
+    \hspace{1pt} \faPhone \hspace{2pt} \plainhref{tel:+351967322385}{\texttt{+351 967 322 385}} \\
+    \small \faGlobe \hspace{2pt} \plainhref{https://rcosta358.github.io/}{\texttt{rcosta358.github.io}} \hspace{1pt} $|$
+    \hspace{1pt} \faLinkedin \hspace{2pt} \plainhref{https://www.linkedin.com/in/rcosta358/}{\texttt{rcosta358}} \hspace{1pt} $|$
+    \hspace{1pt} \faGithub \hspace{2pt} \plainhref{https://github.com/rcosta358}{\texttt{rcosta358}} \hspace{1pt} $|$
+    \hspace{1pt} \faIdBadge \hspace{2pt} \plainhref{https://orcid.org/0009-0007-5674-4200}{\texttt{0009-0007-5674-4200}}
+    \\ \vspace{-3pt}
+\end{center}
+
+%-----------ABOUT-----------
+\section{ABOUT}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+      Software engineering student focused on building reliable, scalable software. Main interests include \textbf{software verification}, \textbf{developer tools}, and \textbf{agentic AI workflows}. Currently working on LiquidJava, a static analysis tool that detects violations of properties specified through Java annotations at compile time, such as valid value ranges and API protocols. Also experienced in backend systems, web and mobile applications, and cloud computing.
+    }}
+ \end{itemize}
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\href{https://lasige.pt}{LASIGE Research Unit}}{2025 -- 2026 (Expected)}
+      {\href{https://lasige.pt/member/ricardo-manuel-costa/}{Researcher}}{Lisbon, Portugal}
+      \begin{itemize}[leftmargin=0in, label={}]
+        \small{\item{
+          \textbf{Research:} {Improving the usability of LiquidJava, a liquid type system for Java, by enhancing verification feedback, extending IDE support, and refining the overall verification to address usability barriers identified in an \href{https://dl.acm.org/doi/10.1145/3729327}{earlier paper}}\vspace{2pt} \\
+          \textbf{Contributions:} {120+ merged pull requests to \href{https://github.com/liquid-java/liquidjava}{LiquidJava} and 80+ merged pull requests to its \href{https://github.com/liquid-java/vscode-liquidjava}{VS Code extension}}
+        }}
+      \end{itemize}
+  \resumeSubHeadingListEnd
+%-----------EDUCATION-----------
+\section {EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\href{https://ciencias.ulisboa.pt/en}{Faculdade de Ci\^encias da Universidade de Lisboa (FCUL)}}{2024 -- 2026 (Expected)}
+      {MSc in Computer Science and Engineering (Specialization in Software Engineering)}{Lisbon, Portugal}
+      \begin{itemize}[leftmargin=0in, label={}]
+        \small{\item{
+          \textbf{Current Grade:} {17/20}\vspace{2pt} \\
+          \textbf{Thesis:} {``Improving the Usability of \href{https://github.com/liquid-java/liquidjava}{LiquidJava}''}\vspace{2pt} \\
+          \textbf{Main Courses:} {Software Design (17/20), Compilation Techniques (18/20), Software Verification and Validation (16/20), Cloud Computing (18/20), Software Security (17/20), Mobile Computing (19/20)}
+        }}
+      \end{itemize}
+
+    \resumeSubheading
+      {\href{https://www.isel.pt/en}{Instituto Superior de Engenharia de Lisboa (ISEL)}}{2021 -- 2024}
+      {BSc in Computer Science and Engineering}{Lisbon, Portugal}
+      \begin{itemize}[leftmargin=0in, label={}]
+        \small{\item{
+          \textbf{Final Grade:} {15/20}\vspace{2pt} \\
+          \textbf{Final Project:} {``\href{https://github.com/NoteSpaceTeam/NoteSpace}{NoteSpace}: Multi-Platform Web Application for Real-Time Document Collaboration \& Sharing'' (18/20)}\vspace{2pt} \\
+          \textbf{Main Courses:} {Programming (19/20), Software Laboratory (20/20), Algorithms and Data Structures (16/20), Web Programming (17/20), Mobile Programming (16/20)}
+        }}
+      \end{itemize}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/liquid-java/liquidjava}{liquidjava}} \textbar{} Improved verification workflow and feedback with better error messages and developer experience}{}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/liquid-java/vscode-liquidjava}{vscode-liquidjava}} \textbar{} Extended IDE support for reading, writing and debugging refinements in VS Code}{}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/liquid-java/liquidjava-mcp}{liquidjava-mcp}} \textbar{} Java MCP server that exposes LiquidJava verification tools to LLM agents over stdio}{}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/NoteSpaceTeam/NoteSpace}{NoteSpace}} \textbar{} Real-time collaborative editor with markdown and version control support}{}
+      \resumeProjectHeading
+        {\textbf{\href{https://github.com/rcosta358/cf_ai_code_reviewer}{AI Code Reviewer}} \textbar{} Lightweight AI code review workflow powered by Cloudflare Workers AI and KV}{}
+      \resumeProjectHeading
+        {\textbf{\href{https://rcosta358.github.io/barista.pdf}{Barista}} \textbar{} LLM agent workflow for synthesizing LiquidJava specifications from Javadoc documentation}{}
+      \resumeProjectHeading
+        {\textbf{\href{https://github.com/ThreaditApp/Threadit}{Threadit}} \textbar{} REST API with microservices architecture, gRPC service communication, and GCP deployment}{}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/rcosta358/aguda-rs}{aguda-rs}} \textbar{} Compiler for a custom programming language implemented in Rust}{}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/rcosta358/passman}{passman}} \textbar{} Secure multi-user CLI password manager with local encrypted storage built in Rust}{}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/Programmaters/Sketch.io}{Sketch.io}} \textbar{} Multiplayer drawing and guessing game using React, Node.js, and Socket.IO}{}
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/rcosta358/AdventOfCode}{AdventOfCode}} \textbar{} Solutions for Advent of Code coding puzzles using Python (88 completed)}{}
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Programming Languages} \textbar{} {Python, Java, JavaScript, TypeScript, Kotlin, Rust, Go, C, C\#}\vspace{2pt} \\
+     \textbf{Backend} \textbar{} {REST, gRPC, Microservices, WebSockets, Spring Boot, Node.js, Express, Socket.IO, Maven, Gradle}\vspace{2pt} \\
+     \textbf{Cloud \& DevOps} \textbar{} {GCP, Cloudflare Workers, Docker, Kubernetes, Git, GitHub Actions, CI/CD, Linux}\vspace{2pt} \\
+     \textbf{Frontend} \textbar{} {React, HTML, CSS, Vite, Webpack, PWA}\vspace{2pt} \\
+     \textbf{Mobile} \textbar{} {Android, Jetpack Compose}\vspace{2pt} \\
+     \textbf{Databases} \textbar{} {PostgreSQL, Firestore, MongoDB, Cloudflare KV, Elasticsearch}\vspace{2pt} \\
+     \textbf{Compilers \& Static Analysis} \textbar{} {Parsers, Type Systems, SMT Solvers, LLVM}\vspace{2pt} \\
+     \textbf{Developer Tooling} \textbar{} {VS Code Extension API, LSP, JSON-RPC}\vspace{2pt} \\
+     \textbf{AI Engineering} \textbar{} {AI Agents, Agentic Workflows, Cloudflare Workers AI, MCP}
+    }}
+\end{itemize}
+
+%-----------PUBLICATIONS-----------
+\section{PUBLICATIONS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+      \textbf{``Barista: Synthesizing Typestate Specifications with LLM Agents''} \textbar{} Catarina Gamboa, Paulo Canelas, \underline{Ricardo Costa}, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca (Accepted at \href{https://conf.researchr.org/home/ase-2026}{Automated Software Engineering (ASE) 2026})
+    }}
+\end{itemize}
+
+%-----------POSTERS-----------
+\section{POSTERS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+      \textbf{``\href{https://rcosta358.github.io/improving_the_usability_of_liquidjava.pdf}{Improving the Usability of LiquidJava}''} \textbar{} {\underline{Ricardo Costa}, Catarina Gamboa, Alcides Fonseca}\vspace{2pt} \\
+      \textbf{``\href{https://rcosta358.github.io/barista.pdf}{Barista: Synthesizing Typestate Specifications with LLM Agents}''} \textbar{} {Catarina Gamboa, Paulo Canelas, \underline{Ricardo Costa}, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca (Best PhD Student Poster Award)}
+    }}
+\end{itemize}
+
+% %-----------TALKS-----------
+% \section{TALKS}
+%  \begin{itemize}[leftmargin=0in, label={}]
+%     \small{\item{
+%     }}
+% \end{itemize}
+
+%-----------EVENTS-----------
+\section{EVENTS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+      \textbf{Speaker} \textbar{} \href{https://jnation.pt}{JNation 2026} $\cdot$ \href{https://www.youtube.com/watch?v=jEA6rN75Q5U}{``LiquidJava: Catch Bugs at Compile Time with Liquid Types''} \vspace{2pt} \\
+      \textbf{Poster Presenter} \textbar{} \href{https://lasige.pt}{11th LASIGE Workshop} $\cdot$ \href{https://rcosta358.github.io/improving_the_usability_of_liquidjava.pdf}{``Improving the Usability of LiquidJava''} \vspace{2pt} \\
+      \textbf{Volunteer} \textbar{} \href{https://lisbonai.org}{Lisbon AI 2026}
+    }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}
