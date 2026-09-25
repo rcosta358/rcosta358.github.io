@@ -8,7 +8,7 @@ if (!about) {
 }
 
 const experience = about.data.experience ?? [];
-const talks = about.data.talks ?? [];
+const events = about.data.events ?? [];
 const publications = about.data.publications ?? [];
 const posters = about.data.posters ?? [];
 const highlightedAuthor = about.data.name;
@@ -21,7 +21,7 @@ const authorParts = (authors: string) => authors.split(highlightedAuthor);
     <section class="hero compact">
       <p class="eyebrow">LASIGE</p>
       <h1>Research</h1>
-      <p>Research work, talks, publications, and posters around software verification, developer tools, and type systems.</p>
+      <p>Research work, publications, posters, and events around software verification, developer tools, and AI.</p>
     </section>
 
     {
@@ -56,36 +56,6 @@ const authorParts = (authors: string) => authors.split(highlightedAuthor);
               </article>
             ))}
           </div>
-        </section>
-      ) : null
-    }
-
-    {
-      talks.length ? (
-        <section class="section" aria-label="Talks">
-          <div class="section-header">
-            <h2>Talks</h2>
-          </div>
-          <ul class="output-list">
-            {talks.map((talk) => (
-              <li>
-                {talk.href ? (
-                  <a href={talk.href} target="_blank" rel="noreferrer">{talk.title}</a>
-                ) : (
-                  <strong>{talk.title}</strong>
-                )}
-                <span>
-                  {talk.eventHref ? (
-                    <a href={talk.eventHref} target="_blank" rel="noreferrer">{talk.event}</a>
-                  ) : (
-                    talk.event
-                  )}
-                  {", "}
-                  {talk.location} · {talk.role}
-                </span>
-              </li>
-            ))}
-          </ul>
         </section>
       ) : null
     }
@@ -156,6 +126,40 @@ const authorParts = (authors: string) => authors.split(highlightedAuthor);
         </section>
       ) : null
     }
+
+    {
+      events.length ? (
+        <section class="section" aria-label="Events">
+          <div class="section-header">
+            <h2>Events</h2>
+          </div>
+          <ul class="output-list">
+            {events.map((item) => (
+              <li>
+                <strong>{item.role}</strong>
+                <span>
+                  {item.eventHref ? (
+                    <a href={item.eventHref} target="_blank" rel="noreferrer">{item.event}</a>
+                  ) : (
+                    item.event
+                  )}
+                  {item.title ? (
+                    <>
+                      {" · "}
+                      {item.href ? (
+                        <a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+                      ) : item.title}
+                    </>
+                  ) : null}
+                  {` · ${item.location}`}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null
+    }
+
   </div>
 </BaseLayout>
 

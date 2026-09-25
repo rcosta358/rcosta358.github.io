@@ -54,8 +54,6 @@ skills:
     items: [Parsers, Type Systems, SMT Solvers, LLVM]
   - group: Developer Tooling
     items: [VS Code Extension API, LSP, JSON-RPC]
-  - group: Testing
-    items: [Unit Testing, Integration Testing, Property-Based Testing]
   - group: AI Engineering
     items: [AI Agents, Agentic Workflows, Cloudflare Workers AI, MCP]
 experience:
@@ -66,13 +64,23 @@ experience:
     project: Improving the usability of LiquidJava, a liquid type system for Java, through enhanced verification feedback, IDE integration, and overall developer experience
     contributions: 100+ merged pull requests to LiquidJava and 70+ merged pull requests to its VS Code extension
     funding: FCT | LASIGE
-talks:
-  - title: "LiquidJava: Catch Bugs at Compile Time with Liquid Types"
+events:
+  - role: Speaker
     event: JNation 2026
     eventHref: https://jnation.pt
-    location: Coimbra, Portugal
-    role: Co-Speaker
-    href: https://www.youtube.com/watch?v=HKRU4-v98fU
+    location: Convento São Francisco, Coimbra, Portugal
+    title: "LiquidJava: Catch Bugs at Compile Time with Liquid Types"
+    href: https://www.youtube.com/watch?v=jEA6rN75Q5U
+  - role: Poster Presenter
+    event: 11th LASIGE Workshop
+    eventHref: https://lasige.pt
+    location: Faculty of Sciences of the University of Lisbon, Lisbon, Portugal
+    title: Improving the Usability of LiquidJava
+    href: https://rcosta358.github.io/improving_the_usability_of_liquidjava.pdf
+  - role: Volunteer
+    event: Lisbon AI 2026
+    eventHref: https://lisbonai.org
+    location: Champalimaud Centre for the Unknown, Lisbon, Portugal
 publications:
   - title: "Barista: Synthesizing Typestate Specifications with LLM Agents"
     authors: Catarina Gamboa, Paulo Canelas, Ricardo Costa, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca

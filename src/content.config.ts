@@ -45,14 +45,14 @@ const about = defineCollection({
         })
       )
       .optional(),
-    talks: z
+    events: z
       .array(
         z.object({
-          title: z.string(),
+          role: z.string(),
           event: z.string(),
           eventHref: z.string().optional(),
           location: z.string(),
-          role: z.string(),
+          title: z.string().optional(),
           href: z.string().optional()
         })
       )
