@@ -13,7 +13,13 @@ const publications = about.data.publications ?? [];
 const posters = about.data.posters ?? [];
 const highlightedAuthor = about.data.name;
 
-const authorParts = (authors: string) => authors.split(highlightedAuthor);
+const authorLinks: Record<string, string> = {
+  "Catarina Gamboa": "https://catarinagamboa.github.io",
+  "Paulo Canelas": "https://pcanelas.com",
+  "Alcides Fonseca": "https://alcidesfonseca.com",
+  "Jonathan Aldrich": "https://www.cs.cmu.edu/~aldrich/",
+  "Márcio Caetano": "https://rodrigomilisse.github.io",
+};
 const contributionParts = (contributions: string) =>
   contributions.split(/\b(verifier|VS Code extension)\b/g);
 ---
@@ -81,6 +87,12 @@ const contributionParts = (contributions: string) =>
                       ) : part
                     )}
                   </li>
+                  <li>
+                    <strong>Supervisors:</strong>{" "}
+                    <a href={authorLinks["Alcides Fonseca"]} target="_blank" rel="noreferrer">Alcides Fonseca</a>
+                    {" and "}
+                    <a href={authorLinks["Catarina Gamboa"]} target="_blank" rel="noreferrer">Catarina Gamboa</a>
+                  </li>
                   {item.funding ? (
                     <li>
                       <strong>Funding:</strong>{" "}
@@ -109,10 +121,16 @@ const contributionParts = (contributions: string) =>
                 <strong>{publication.title}</strong>
                 <span>
                   {
-                    authorParts(publication.authors).map((part, index, parts) => (
+                    publication.authors.split(", ").map((author, index) => (
                       <>
-                        {part}
-                        {index < parts.length - 1 ? <u>{highlightedAuthor}</u> : null}
+                        {index > 0 ? ", " : ""}
+                        {author === highlightedAuthor ? (
+                          <u>{author}</u>
+                        ) : authorLinks[author] ? (
+                          <a href={authorLinks[author]} target="_blank" rel="noreferrer">{author}</a>
+                        ) : (
+                          author
+                        )}
                       </>
                     ))
                   }
@@ -148,10 +166,16 @@ const contributionParts = (contributions: string) =>
                 )}
                 <span>
                   {
-                    authorParts(poster.authors).map((part, index, parts) => (
+                    poster.authors.split(", ").map((author, index) => (
                       <>
-                        {part}
-                        {index < parts.length - 1 ? <u>{highlightedAuthor}</u> : null}
+                        {index > 0 ? ", " : ""}
+                        {author === highlightedAuthor ? (
+                          <u>{author}</u>
+                        ) : authorLinks[author] ? (
+                          <a href={authorLinks[author]} target="_blank" rel="noreferrer">{author}</a>
+                        ) : (
+                          author
+                        )}
                       </>
                     ))
                   }

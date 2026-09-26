@@ -58,7 +58,7 @@ body::before {
     radial-gradient(ellipse at 72% 68%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 48%);
   content: "";
   pointer-events: none;
-  animation: ambient-drift 22s ease-in-out infinite alternate;
+  animation: ambient-drift 10s ease-in-out infinite alternate;
 }
 
 @keyframes ambient-drift {

@@ -3,7 +3,7 @@ title: About
 name: Ricardo Costa
 location: Lisbon, Portugal
 summary:
-  - Software engineering student focused on building software that helps other developers build their own. Main interests include software verification, developer tools, and agentic AI workflows.
+  - "**Software engineering student focused on building software that helps other developers build their own.** Main interests include software verification, developer tools, and agentic AI workflows."
   - Currently working on LiquidJava, a static analysis tool that detects violations of properties specified through Java annotations at compile time.
   - Also experienced in backend systems, web and mobile applications, and cloud computing.
   - You can check out my CV [here](https://rcosta358.github.io/RicardoCostaCV.pdf).
