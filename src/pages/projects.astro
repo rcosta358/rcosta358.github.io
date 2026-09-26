@@ -6,7 +6,10 @@ import ProjectCard from "@components/ProjectCard.astro";
 const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout title="Projects | Ricardo Costa">
+<BaseLayout
+  title="Projects | Ricardo Costa"
+  description="Browse Ricardo Costa's software projects, including AI integrations, developer tools, and full-stack, cloud-native, mobile, and command-line applications."
+>
   <div class="container page">
     <section class="hero compact">
       <p class="eyebrow">{projects.length} projects</p>

@@ -21,7 +21,7 @@ const routeFromPagePath = (pagePath: string) => {
 export const GET = () => {
   const lastmod = new Date().toISOString().slice(0, 10);
   const urls = Object.keys(pages)
-    .filter((pagePath) => !pagePath.includes("[") && !pagePath.includes("_"))
+    .filter((pagePath) => !pagePath.includes("[") && !pagePath.includes("_") && pagePath !== "./about.astro")
     .map(routeFromPagePath)
     .sort((a, b) => a.localeCompare(b))
     .map(

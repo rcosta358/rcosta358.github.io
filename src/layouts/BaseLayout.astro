@@ -5,8 +5,10 @@ import "@styles/global.scss";
 
 const {
   title = "Ricardo Costa",
-  description = "Personal website and portfolio for Ricardo Costa, a software engineering MSc student focused on developer tools, static analysis, type systems, and reliable software."
+  description = "Personal website and portfolio for Ricardo Costa, a software engineering MSc student focused on developer tools, static analysis, type systems, and reliable software.",
+  canonicalPath = Astro.url.pathname
 } = Astro.props;
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? "https://rcosta358.github.io").toString();
 ---
 
 <!doctype html>
@@ -16,6 +18,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/profile.jpg" type="image/jpeg" />
     <link rel="apple-touch-icon" href="/profile.jpg" />
     <title>{title}</title>
