@@ -195,15 +195,15 @@ const currentPath = Astro.url.pathname;
     color: var(--accent-strong);
   }
 
-  .moon {
-    display: none;
-  }
-
-  :global(:root[data-theme="dark"]) .sun {
+  .sun {
     display: none;
   }
 
   :global(:root[data-theme="dark"]) .moon {
+    display: none;
+  }
+
+  :global(:root[data-theme="dark"]) .sun {
     display: block;
   }
 
