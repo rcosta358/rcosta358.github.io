@@ -24,16 +24,21 @@ const canonicalUrl = new URL(canonicalPath, Astro.site ?? "https://rcosta358.git
     <title>{title}</title>
     <script is:inline>
       (() => {
-        const storedTheme = localStorage.getItem("theme");
+        let storedTheme;
+        try {
+          storedTheme = localStorage.getItem("theme");
+        } catch {
+          // Storage can be unavailable in privacy-restricted browsers.
+        }
         const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        document.documentElement.dataset.theme = storedTheme || preferredTheme;
+        document.documentElement.dataset.theme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : preferredTheme;
       })();
     </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header />
-    <main id="main">
+    <main id="main" tabindex="-1">
       <slot />
     </main>
     <Footer />

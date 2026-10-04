@@ -48,9 +48,7 @@ const currentPath = Astro.url.pathname;
     const header = document.querySelector(".site-header");
     const menuToggle = document.querySelector("[data-menu-toggle]");
     const toggle = document.querySelector("[data-theme-toggle]");
-    const storedTheme = localStorage.getItem("theme");
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const initialTheme = storedTheme || preferredTheme;
+    const initialTheme = root.dataset.theme === "dark" ? "dark" : "light";
 
     root.dataset.theme = initialTheme;
     toggle?.setAttribute("aria-label", `Switch to ${initialTheme === "dark" ? "light" : "dark"} theme`);
@@ -58,14 +56,19 @@ const currentPath = Astro.url.pathname;
     toggle?.addEventListener("click", () => {
       const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
       root.dataset.theme = nextTheme;
-      localStorage.setItem("theme", nextTheme);
+      try {
+        localStorage.setItem("theme", nextTheme);
+      } catch {
+        // Keep the toggle usable even when the browser prevents persistence.
+      }
       toggle.setAttribute("aria-label", `Switch to ${nextTheme === "dark" ? "light" : "dark"} theme`);
     });
 
-    const closeMenu = () => {
+    const closeMenu = (restoreFocus = false) => {
       header?.classList.remove("menu-open");
       menuToggle?.setAttribute("aria-expanded", "false");
       menuToggle?.setAttribute("aria-label", "Open navigation");
+      if (restoreFocus) menuToggle?.focus();
     };
 
     menuToggle?.addEventListener("click", () => {
@@ -75,12 +78,16 @@ const currentPath = Astro.url.pathname;
     });
 
     document.querySelectorAll("#primary-navigation a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", () => closeMenu());
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenu();
+      if (event.key === "Escape" && header?.classList.contains("menu-open")) {
+        const focusInMenu = document.querySelector("#primary-navigation")?.contains(document.activeElement) ?? false;
+        closeMenu(focusInMenu);
+      }
     });
+    if (header) header.dataset.enhanced = "true";
   })();
 </script>
 
@@ -168,7 +175,7 @@ const currentPath = Astro.url.pathname;
   }
 
   .theme-toggle {
-    display: inline-grid;
+    display: none;
     width: 2.65rem;
     height: 2.65rem;
     place-items: center;
@@ -177,6 +184,10 @@ const currentPath = Astro.url.pathname;
     color: var(--text);
     background: var(--surface);
     cursor: pointer;
+  }
+
+  .site-header[data-enhanced] .theme-toggle {
+    display: inline-grid;
   }
 
   .theme-toggle:hover {
@@ -213,9 +224,19 @@ const currentPath = Astro.url.pathname;
       row-gap: 0.75rem;
     }
 
+    .site-header:not([data-enhanced]) .header-inner {
+      grid-template-areas:
+        "brand brand brand"
+        "nav nav nav";
+      row-gap: 0.75rem;
+    }
+
     .menu-toggle {
-      display: inline-grid;
       grid-area: menu;
+    }
+
+    .site-header[data-enhanced] .menu-toggle {
+      display: inline-grid;
     }
 
     .brand {
@@ -236,15 +257,13 @@ const currentPath = Astro.url.pathname;
       align-items: stretch;
       gap: 0.25rem;
       border-radius: 1rem;
-      max-height: 0;
-      padding-block: 0;
-      visibility: hidden;
-      opacity: 0;
+      max-height: 20rem;
+      padding-block: 0.4rem;
+      visibility: visible;
+      opacity: 1;
       overflow: hidden;
-      transform: translateY(-0.35rem);
-      pointer-events: none;
-      border-color: transparent;
-      border-width: 0;
+      transform: translateY(0);
+      pointer-events: auto;
       box-shadow: var(--shadow);
       transition:
         max-height 180ms ease,
@@ -253,6 +272,17 @@ const currentPath = Astro.url.pathname;
         transform 180ms ease,
         border-color 180ms ease,
         visibility 0s linear 180ms;
+    }
+
+    .site-header[data-enhanced]:not(.menu-open) nav {
+      max-height: 0;
+      padding-block: 0;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-0.35rem);
+      pointer-events: none;
+      border-color: transparent;
+      border-width: 0;
     }
 
     .menu-open nav {
