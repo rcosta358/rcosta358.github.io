@@ -85,7 +85,7 @@ events:
     eventHref: https://lasige.pt
     location: Faculty of Sciences of the University of Lisbon, Lisbon, Portugal
     title: Improving the Usability of LiquidJava
-    href: https://rcosta358.github.io/improving_the_usability_of_liquidjava.pdf
+    href: https://rcosta358.github.io/liquidjava-poster.pdf
   - role: Volunteer
     event: Lisbon AI 2026
     eventHref: https://lisbonai.org
@@ -94,13 +94,14 @@ publications:
   - title: "Barista: Synthesizing Typestate Specifications with LLM Agents"
     authors: Catarina Gamboa, Paulo Canelas, Ricardo Costa, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca
     status: Accepted at Automated Software Engineering (ASE) 2026
+    href: https://rcosta358.github.io/barista-ase-26.pdf
     statusHref: https://conf.researchr.org/home/ase-2026
 posters:
   - title: Improving the Usability of LiquidJava
     authors: Ricardo Costa, Catarina Gamboa, Alcides Fonseca
-    href: https://rcosta358.github.io/improving_the_usability_of_liquidjava.pdf
+    href: https://rcosta358.github.io/liquidjava-poster.pdf
   - title: "Barista: Synthesizing Typestate Specifications with LLM Agents"
     authors: Catarina Gamboa, Paulo Canelas, Ricardo Costa, Márcio Caetano, Jonathan Aldrich, Alcides Fonseca
-    href: https://rcosta358.github.io/barista.pdf
+    href: https://rcosta358.github.io/barista-poster.pdf
     note: Best PhD Student Poster Award
 ---

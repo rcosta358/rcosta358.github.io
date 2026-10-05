@@ -118,7 +118,11 @@ const contributionParts = (contributions: string) =>
           <ul class="output-list">
             {publications.map((publication) => (
               <li>
-                <strong>{publication.title}</strong>
+                {publication.href ? (
+                  <a href={publication.href} target="_blank" rel="noreferrer">{publication.title}</a>
+                ) : (
+                  <strong>{publication.title}</strong>
+                )}
                 <span>
                   {
                     publication.authors.split(", ").map((author, index) => (
