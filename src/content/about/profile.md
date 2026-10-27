@@ -74,6 +74,12 @@ experience:
     extensionHref: https://github.com/liquid-java/vscode-liquidjava
     funding: FCT | LASIGE
 events:
+  - role: Poster Presenter
+    event: CIÊNCIAS Research & Innovation Day 2026
+    eventHref: https://ciencias.ulisboa.pt/ciencias-research-innovation-day-2026-poster-session
+    location: Faculty of Sciences of the University of Lisbon, Lisbon, Portugal
+    title: Improving the Usability of LiquidJava
+    href: https://rcosta358.github.io/liquidjava-poster.pdf
   - role: Speaker
     event: JNation 2026
     eventHref: https://jnation.pt
