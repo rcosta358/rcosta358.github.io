@@ -40,13 +40,15 @@ const about = defineCollection({
           location: z.string().optional(),
           project: z.string(),
           projectHref: z.string().optional(),
+          projectInHeader: z.boolean().optional(),
           workstreams: z.array(
             z.object({
               label: z.string(),
               detail: z.string()
             })
           ).optional(),
-          contributions: z.string(),
+          contributions: z.string().optional(),
+          supervisors: z.array(z.object({ name: z.string(), href: z.string() })).optional(),
           verifierHref: z.string().optional(),
           extensionHref: z.string().optional(),
           funding: z.string().optional(),

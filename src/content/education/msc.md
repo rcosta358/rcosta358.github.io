@@ -1,7 +1,7 @@
 ---
 degree: MSc in Computer Science and Engineering
 institution: Faculdade de Ciências da Universidade de Lisboa (FCUL)
-period: 2024-Present
+period: 2024 - 2026
 order: 1
 facts:
   - "Specialization: Software Engineering"

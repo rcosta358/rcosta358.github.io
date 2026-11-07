@@ -3,8 +3,8 @@ title: About
 name: Ricardo Costa
 location: Lisbon, Portugal
 summary:
-  - "**Software engineering student focused on building software that helps other developers build their own.** Main interests include software verification, developer tools, and agentic AI workflows."
-  - Currently working on LiquidJava, a static analysis tool that detects violations of properties specified through Java annotations at compile time.
+  - "**Software engineer focused on building software that helps other developers build their own.** Main interests include software verification, developer tools, and agentic AI workflows."
+  - Working on agentic code review with Gitar at Sonar. I have also worked on LiquidJava, a static analysis tool for Java.
   - Also experienced in backend systems, web and mobile applications, and cloud computing.
   - You can check out my CV [here](https://rcosta358.github.io/RicardoCostaCV.pdf).
 contacts:
@@ -30,11 +30,11 @@ interests:
 education:
   - degree: MSc in Computer Science and Engineering
     institution: Faculdade de Ciências da Universidade de Lisboa (FCUL)
-    period: 2024-Present
+    period: 2024 - 2026
     detail: Software Engineering specialization, researcher at LASIGE, current grade 17/20.
   - degree: BSc in Computer Science and Engineering
     institution: Instituto Superior de Engenharia de Lisboa (ISEL)
-    period: 2021-2024
+    period: 2021 - 2024
     detail: Final grade 15/20; final project NoteSpace graded 18/20.
 skills:
   - group: Programming Languages
@@ -56,9 +56,16 @@ skills:
   - group: AI Engineering
     items: [AI Agents, Agentic Workflows, Cloudflare Workers AI, MCP]
 experience:
+  - organization: Sonar
+    role: Software Engineer
+    period: 2026 – Present
+    href: https://www.sonarsource.com/
+    project: Agentic Code Review (Gitar)
+    projectHref: https://www.sonarsource.com/products/gitar/
+    projectInHeader: true
   - organization: LASIGE Research Unit
     role: Software Engineering Researcher
-    period: 2025 – Present
+    period: 2025 – 2026
     href: https://lasige.pt/member/ricardo-manuel-costa/
     project: Improving the usability of LiquidJava, a liquid type system for Java, through enhanced verification feedback, extended IDE support, and a better overall developer experience.
     projectHref: https://github.com/liquid-java/liquidjava
@@ -73,6 +80,11 @@ experience:
     verifierHref: https://github.com/liquid-java/liquidjava
     extensionHref: https://github.com/liquid-java/vscode-liquidjava
     funding: FCT | LASIGE
+    supervisors:
+      - name: Alcides Fonseca
+        href: https://alcidesfonseca.com
+      - name: Catarina Gamboa
+        href: https://catarinagamboa.github.io
 events:
   - role: Poster Presenter
     event: CIÊNCIAS Research & Innovation Day 2026

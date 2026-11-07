@@ -25,19 +25,19 @@ const contributionParts = (contributions: string) =>
 ---
 
 <BaseLayout
-  title="Research | Ricardo Costa"
-  description="Explore Ricardo Costa's research in software verification, developer tools, and AI, including publications, posters, and research events."
+  title="Experience | Ricardo Costa"
+  description="Explore Ricardo Costa's software engineering experience at Sonar and LASIGE, alongside publications, posters, and events."
 >
   <div class="container page">
     <section class="hero compact">
-      <p class="eyebrow">LASIGE</p>
-      <h1>Research</h1>
-      <p>Research work, publications, posters, and events around software verification, developer tools, and AI.</p>
+      <p class="eyebrow">Software engineering</p>
+      <h1>Experience</h1>
+      <p>Software engineering experience, publications, posters, and events around developer tools, software verification, and AI.</p>
     </section>
 
     {
       experience.length ? (
-        <section class="section" aria-label="Research experience">
+        <section class="section" aria-label="Professional experience">
           <div class="section-header">
             <h2>Experience</h2>
           </div>
@@ -59,25 +59,37 @@ const contributionParts = (contributions: string) =>
                     )}
                   </strong>
                 </div>
+                {item.projectInHeader ? (
+                  <p>
+                    {item.projectHref ? (
+                      <a href={item.projectHref} target="_blank" rel="noreferrer">{item.project}</a>
+                    ) : item.project}
+                  </p>
+                ) : item.location ? <p>{item.location}</p> : null}
+                {!item.projectInHeader || item.contributions || item.supervisors?.length || item.funding ? (
                 <ul class="education-facts">
-                  <li>
+                  {!item.projectInHeader ? <li>
                     <strong>Project:</strong>{" "}
                     {item.projectHref ? (
-                      <>
-                        {item.project.split("LiquidJava")[0]}
-                        <a href={item.projectHref} target="_blank" rel="noreferrer">LiquidJava</a>
-                        {item.project.split("LiquidJava").slice(1).join("LiquidJava")}
-                      </>
+                      item.project.includes("LiquidJava") ? (
+                        <>
+                          {item.project.split("LiquidJava")[0]}
+                          <a href={item.projectHref} target="_blank" rel="noreferrer">LiquidJava</a>
+                          {item.project.split("LiquidJava").slice(1).join("LiquidJava")}
+                        </>
+                      ) : (
+                        <a href={item.projectHref} target="_blank" rel="noreferrer">{item.project}</a>
+                      )
                     ) : item.project}
                     {item.workstreams?.length ? (
-                      <ul class="research-workstreams">
+                      <ul class="experience-workstreams">
                         {item.workstreams.map((workstream) => (
                           <li><strong>{workstream.label}:</strong> {workstream.detail}</li>
                         ))}
                       </ul>
                     ) : null}
-                  </li>
-                  <li>
+                  </li> : null}
+                  {item.contributions ? <li>
                     <strong>Contributions:</strong>{" "}
                     {contributionParts(item.contributions).map((part) =>
                       part === "verifier" && item.verifierHref ? (
@@ -86,13 +98,16 @@ const contributionParts = (contributions: string) =>
                         <a href={item.extensionHref} target="_blank" rel="noreferrer">{part}</a>
                       ) : part
                     )}
-                  </li>
-                  <li>
+                  </li> : null}
+                  {item.supervisors?.length ? <li>
                     <strong>Supervisors:</strong>{" "}
-                    <a href={authorLinks["Alcides Fonseca"]} target="_blank" rel="noreferrer">Alcides Fonseca</a>
-                    {" and "}
-                    <a href={authorLinks["Catarina Gamboa"]} target="_blank" rel="noreferrer">Catarina Gamboa</a>
-                  </li>
+                    {item.supervisors.map((supervisor, index) => (
+                      <>
+                        {index ? " and " : ""}
+                        <a href={supervisor.href} target="_blank" rel="noreferrer">{supervisor.name}</a>
+                      </>
+                    ))}
+                  </li> : null}
                   {item.funding ? (
                     <li>
                       <strong>Funding:</strong>{" "}
@@ -102,6 +117,7 @@ const contributionParts = (contributions: string) =>
                     </li>
                   ) : null}
                 </ul>
+                ) : null}
               </article>
             ))}
           </div>
@@ -252,7 +268,7 @@ const contributionParts = (contributions: string) =>
     padding-top: 1rem;
   }
 
-  .research-workstreams {
+  .experience-workstreams {
     display: grid;
     gap: 0.45rem;
     margin: 0.5rem 0 0;

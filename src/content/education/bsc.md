@@ -1,7 +1,7 @@
 ---
 degree: BSc in Computer Science and Engineering
 institution: Instituto Superior de Engenharia de Lisboa (ISEL)
-period: 2021-2024
+period: 2021 - 2024
 order: 2
 facts:
   - "Final grade: 15/20"
